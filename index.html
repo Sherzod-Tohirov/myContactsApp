@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/app.js" defer></script>
+    <title>Contact App</title>
+</head>
+<body>
+    <main>
+        <section class="app">
+            <div class="container">
+                <h1 class="text-center mt-3 mb-5">Contacts App</h1>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12 mb-sm-5">
+                        <h2 class="text-center mb-3 h3">Add new contact</h2>
+                        <form class="js-form">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input id="name" class="form-control js-name-input" type="text" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tel">Tel number: </label>
+                                <input id="tel" class="form-control js-tel-input" type="tel" name="tel" required>
+                                <small class="form-text text-danger js-tel-input-error"></small>
+                            </div>
+                           <div class="form-group mb-3">
+                                <label for="type">Choose type</label>
+                                <select id="type" class="form-control js-type-input" name="type" required>
+                                    <option value="" hidden>Type</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Work">Work</option>
+                                    <option value="Friends">Friends</option>
+                                </select>
+                           </div>
+                           <button class="btn btn-block btn-primary p-2 mt-4" type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-8 col-sm-12 d-flex justify-content-center">
+                        <div class="w-100 row d-flex shadow">
+                            <div class="col-3 p-0 d-flex flex-column">
+                                <h3 class="h6 text-center font-weight-normal text-secondary text-center my-2">Sort by type</h3>
+                                <div class="btn-group-vertical d-flex flex-column js-type-btn-group">
+                                    <button type="button" class="btn btn-primary js-all-btn">All</button>
+                                    <button type="button" class="btn btn-primary js-family-btn">Family</button>
+                                    <button type="button" class="btn btn-primary js-work-btn">Work</button>
+                                    <button type="button" class="btn btn-primary js-friends-btn">Friends</button>
+                                </div>
+                                <h3 class="h6 text-center font-weight-normal text-muted text-center my-2">Sort by name</h3>
+                                <div class="btn-group-vertical d-flex flex-column flex-grow-1 js-sort-btn-group">
+                                    <button type="button" class="btn flex-grow-1 btn-success js-asc-btn">A-Z</button>
+                                    <button type="button" class="btn flex-grow-1 btn-success js-desc-btn">Z-A</button>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <h2 class="text-center mt-2 mb-4">Users</h2>
+                                <ul class="list-group d-flex flex-column users-list js-list pb-3 position-relative list-unstyled">
+                                    <template class="js-not-found-temp">
+                                        <li class="text-muted text-center not-found-item">Nothing is found !</li>
+                                    </template>
+                                    
+                                    <template class="js-data-temp">
+                                        <li class="list-group-item d-flex align-items-center data-item justify-content-between mb-2">
+                                            <div class="d-flex flex-column">
+                                                <p class="m-0 mb-2 font-weight-bold js-name"></p>
+                                                <p class="m-0 js-tel"></p>
+                                            </div>
+                                            <button type="button" class="btn btn-outline-info type-btn js-type"></button>
+                                            <button type="button" class="btn btn-danger badge badge-pill text-white type-btn delete-btn js-delete-btn">delete</button>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
